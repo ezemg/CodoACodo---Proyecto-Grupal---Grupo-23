@@ -1,0 +1,19 @@
+{
+  "name": "repo-github",
+  "version": "1.0.0",
+  "description": "TP curso CodoACodo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ezemg/CodoACodo---Proyecto-Grupal---Grupo-23.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ezemg/CodoACodo---Proyecto-Grupal---Grupo-23/issues"
+  },
+  "homepage": "https://github.com/ezemg/CodoACodo---Proyecto-Grupal---Grupo-23#readme"
+}
