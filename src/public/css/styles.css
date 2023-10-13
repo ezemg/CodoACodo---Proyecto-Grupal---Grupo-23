@@ -58,6 +58,50 @@ a {
   text-decoration: none;
 }
 
+/* Formulario de Contacto */
+.Cursos {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-self: left;
+  text-align: left;
+  gap: 20px;
+  padding-top: 20px;
+}
+
+.cursos-info {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+  align-self: left;
+  gap: 30px;
+}
+
+.cursos-head-01 {
+  font-size: 2.0rem;
+  text-align: left;
+  margin-bottom: 10px;
+}
+.cursos-head-02 {
+  font-size: 2.0rem;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.cursos-texto-01 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 10px;
+}
+.cursos-texto-02 {
+  font-size: 1.0rem;
+  text-align: justify;
+  margin-bottom: 10px;
+}
+
 /* TESTIMONIOS */
 .testimonios {
   display: flex;
@@ -221,10 +265,25 @@ a {
 
 form {
   padding: 50px 55px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  border-radius: 20px;
+  align-self: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   text-align: left;
   width: 340px;
+}
+
+label{
+  color:black;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.btn {
+font-size: 12px;
+color: var(--text-clr);
+background-color: var(--card-clr);
+border: 0;
+cursor: pointer;
 }
 
 
