@@ -188,3 +188,41 @@ a {
   font-size: 14px;
   color: var(--text-clr);
 }
+
+/* Formulario de Contacto */
+.Contacto {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-self: center;
+  gap: 20px;
+
+  padding-top: 20px;
+}
+
+.formulario-texto {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  gap: 30px;
+}
+
+.formulario-texto-01 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.formulario-texto-02 {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+form {
+  padding: 50px 55px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  text-align: center;
+  width: 340px;
+}

@@ -66,6 +66,54 @@
       </section>
 
       <!-- FINAL TESTIMONIOS -->
+
+         <!-- INICIO FORMULARIO DE CONTACTO -->
+         
+         <section class="Contacto">
+          <div class="formulario-texto">
+            <span class="formulario-texto-01"> Tenés dudas?</span>
+
+            <span class="formulario-texto-02"> Usá el formulario y estaremos respondiendote cuanto antes :)</span>
+    
+          </div>
+          <form action="" class="formulario" id="formulario">
+      
+             <div class="formulario__grupo" id="grupo__nombre">
+              <label for="nombre" class="formulario__label">Nombre</label>
+              <div class="formulario__grupo-input">
+                  <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Leanne Graham">
+                  <i class="formulario__validacion-estado fas fa-time-circle"></i>
+                  <i class="formulario__validacion-estado" fa-regular fa-circle-xmark"></i>
+              </div>
+                <p class="formulario__input-error"> Por fa,  introduce tu nombre!</p>
+              </div>
+              <div class="formulario__grupo" id="grupo__mail">
+                <label for="mail" class="formulario__label">Correo del usuario</label>
+                <div class="formulario__grupo-input">
+                    <input type="text" class="formulario__input" name="mail" id="mail" placeholder="ejemplo@example.com">
+                    <i class="formulario__validacion-estado fas fa-time-circle"></i>
+                    <i class="formulario__validacion-estado" fa-regular fa-circle-xmark"></i>
+                </div>
+                <p class="formulario__input-error"> El mail es incorrecto :(</p> 
+              </div>
+              <div class="formulario__grupo" id="grupo__usuario">
+                <label for="telefono" class="formulario__label">Teléfono</label>
+                <div class="formulario__grupo-input">
+                    <input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="9112345669">
+                    <i class="formulario__validacion-estado fas fa-time-circle"></i>
+                    <i class="formulario__validacion-estado" fa-regular fa-circle-xmark"></i>
+                </div>
+                <p class="formulario__input-error"> El número de teléfono no es válido.</p>
+             </div>
+              <div class="mensaje" id="grupo__mensaje">
+                <label for="message" class="formulario__label"> Mensaje</label>
+                <Textarea name="message" id="message" cols="30" rows="5" placeholder="Déjanos tu mensaje"></Textarea>
+              </div>
+              <input class="btn" type="submit" value="Enviar">
+
+          </form>
+        </section>
+
       <hr />
     </div>
     <!--   *****   JQuery Link   *****   -->
