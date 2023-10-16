@@ -69,15 +69,25 @@ a {
   padding-top: 20px;
 }
 
-.cursos-info {
+.cursosheader {
   width: 80%;
   display: flex;
   flex-direction: column;
   justify-content: left;
   align-items: left;
   align-self: left;
-  gap: 30px;
+  gap: 20px;
 }
+
+/* .cursos-info {
+ width: 80%;
+  display: flex;
+ flex-direction: column;
+  justify-content: left;
+  align-items: left;
+  align-self: left;
+  gap: 30px;
+}*/
 
 .cursos-head-01 {
   font-size: 2.0rem;
@@ -86,17 +96,21 @@ a {
 }
 .cursos-head-02 {
   font-size: 2.0rem;
-  text-align: center;
+  text-align: left;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 .cursos-texto-01 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   font-size: 1.5rem;
   font-weight: bold;
   text-align: left;
   margin-bottom: 10px;
 }
 .cursos-texto-02 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   font-size: 1.0rem;
   text-align: justify;
   margin-bottom: 10px;
@@ -254,6 +268,41 @@ a {
   gap: 30px;
 }
 
+.formulario__input {
+  width: 100%;
+  background: #ffffff;
+  border: 3px solid transparent;
+  height: 45px;
+  line-height: 45px;
+  padding: 0 40px 0 10px;
+  transition: .3s ease all;
+}
+
+.formulario__input:focus {
+  border: 3px solid #396af3;
+  outline: none;
+  box-shadow: 3px 0px 30px rgba(0, 0, 0, 0.1);
+}
+
+.formulario__input-error{
+  font-size: 12px;
+  margin-bottom: 0;
+  display: none;
+}
+
+.formulario__input-error-activo {
+  display: block;
+}
+
+.formulario__validacion-estado {
+  position: absolute;
+  right: 10px;
+  bottom: 15px;
+  z-index: 100;
+  font-size: 16px;
+  opacity: 0;
+}
+
 .formulario-texto-01 {
   font-size: 1.5rem;
   font-weight: bold;
@@ -278,12 +327,33 @@ label{
   margin-bottom: 15px;
 }
 
-.btn {
-font-size: 12px;
-color: var(--text-clr);
-background-color: var(--card-clr);
-border: 0;
-cursor: pointer;
+.formulario__grupo-btn-enviar {
+display: flex;
+flex-direction: column;
+align-items: center;
 }
 
+.formulario__btn {
+height: 45px;
+line-height: 45px;
+color: var(--text-clr);
+background-color: var(--card-clr);
+font-weight: bold;
+border: none;
+border-radius: 3px;
+cursor: pointer;
+transition: .1s ease all;
+}
 
+.formulario__btn:hover {
+  box-shadow: 3px 0px 30px rgba(0, 0, 0, 0.1);
+}
+
+.formulario__mensaje-exito {
+  font-size: 14px;
+  display: none;
+}
+
+.formulario__mensaje-exito-activado {
+  display: block;
+}

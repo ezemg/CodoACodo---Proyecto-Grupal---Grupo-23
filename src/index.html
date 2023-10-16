@@ -53,33 +53,33 @@
 
       <!-- INICIO CodoCursos -->
       <section class="cursos">
-        <div  class="cursos-info">
+        <div  class="cursosheader">
           <span class="cursos-head-01">Aprendé sin límites, únite a</span>
           <span class="cursos-head-02">CodoCursos</span>
         </div>
 
-        <div class="cursos-texto-01">
+        <div class="cursos-info">
           <span class="cursos-texto-01"> Programación Full Stack</span>
           <span class="cursos-texto-02"
           >Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam,
           molestiae repellendus fugiat odit commodi vero illo.</span>
         </div>
 
-        <div class="cursos-texto-01">
+        <div class="cursos-info">
           <span class="cursos-texto-01"> Data Science</span>
           <span class="cursos-texto-02"
           >Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam,
           molestiae repellendus fugiat odit commodi vero illo.</span>
         </div>
 
-        <div class="cursos-texto-01">
+        <div class="cursos-info">
           <span class="cursos-texto-01"> Big Data</span>
           <span class="cursos-texto-02"
           >Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam,
           molestiae repellendus fugiat odit commodi vero illo.</span>
         </div>
 
-        <div class="cursos-texto-01">
+        <div class="cursos-info">
           <span class="cursos-texto-01"> Python</span>
           <span class="cursos-texto-02"
           >Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam,
@@ -150,8 +150,11 @@
                 <label for="message" class="formulario__label"> Mensaje</label>
                 <Textarea name="message" id="message" cols="30" rows="5" placeholder="Déjanos tu mensaje"></Textarea>
               </div>
-              <input class="btn" type="submit" value="Enviar">
-
+              <div class="formulario__grupo formulario__grupo-btn-enviar">
+                <button type="submit" class="formulario__grupo-btn">Enviar</button>
+                <p class="formulario__mensaje-exito" id="formulario__mensaje-exito"> El mensaje ha sido enviado</p> 
+              </div>
+              
           </form>
         </section>
         <!-- FINAL FORMULARIO -->
