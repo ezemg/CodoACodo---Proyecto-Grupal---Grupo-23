@@ -40,6 +40,7 @@ hr {
   align-items: center;
   width: 20%;
   gap: 10px;
+  color: black !important;
 }
 
 .header-logo-image {
@@ -54,7 +55,15 @@ hr {
   gap: 30px;
 }
 
-a {
+.header-navbar a,
+.header-navbar a:visited,
+.header-navbar a:hover,
+.header-navbar a:active {
+  color: var(--card-clr);
+  text-decoration: none;
+}
+
+.header a {
   text-decoration: none;
 }
 
@@ -90,12 +99,12 @@ a {
 }*/
 
 .cursos-head-01 {
-  font-size: 2.0rem;
+  font-size: 2rem;
   text-align: left;
   margin-bottom: 10px;
 }
 .cursos-head-02 {
-  font-size: 2.0rem;
+  font-size: 2rem;
   text-align: left;
   font-weight: bold;
   margin-bottom: 30px;
@@ -111,7 +120,7 @@ a {
 .cursos-texto-02 {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  font-size: 1.0rem;
+  font-size: 1rem;
   text-align: justify;
   margin-bottom: 10px;
 }
@@ -275,7 +284,7 @@ a {
   height: 45px;
   line-height: 45px;
   padding: 0 40px 0 10px;
-  transition: .3s ease all;
+  transition: 0.3s ease all;
 }
 
 .formulario__input:focus {
@@ -284,7 +293,7 @@ a {
   box-shadow: 3px 0px 30px rgba(0, 0, 0, 0.1);
 }
 
-.formulario__input-error{
+.formulario__input-error {
   font-size: 12px;
   margin-bottom: 0;
   display: none;
@@ -320,29 +329,29 @@ form {
   width: 340px;
 }
 
-label{
-  color:black;
+label {
+  color: black;
   font-size: 14px;
   font-weight: 600;
   margin-bottom: 15px;
 }
 
 .formulario__grupo-btn-enviar {
-display: flex;
-flex-direction: column;
-align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .formulario__btn {
-height: 45px;
-line-height: 45px;
-color: var(--text-clr);
-background-color: var(--card-clr);
-font-weight: bold;
-border: none;
-border-radius: 3px;
-cursor: pointer;
-transition: .1s ease all;
+  height: 45px;
+  line-height: 45px;
+  color: var(--text-clr);
+  background-color: var(--card-clr);
+  font-weight: bold;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.1s ease all;
 }
 
 .formulario__btn:hover {
@@ -356,4 +365,52 @@ transition: .1s ease all;
 
 .formulario__mensaje-exito-activado {
   display: block;
+}
+
+/* FOOTER */
+
+.footer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+}
+
+.footer-logo a {
+  display: flex;
+  align-items: center;
+  width: 20%;
+  gap: 10px;
+  color: black !important;
+}
+
+.footer-logo-image {
+  height: 40px;
+}
+.footer-logo-text {
+  font-size: 1.2rem;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 70px;
+}
+
+.footer-nav a,
+.footer-nav a:visited,
+.footer-nav a:hover,
+.footer-nav a:active {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.footer-logo a {
+  text-decoration: none;
+}
+
+.footer-copyright {
+  font-style: italic;
+  font-size: 12px;
 }
