@@ -67,16 +67,20 @@ hr {
   text-decoration: none;
 }
 
+
+
+
+
+
+
+
+
 /* Formulario de Contacto */
 .Cursos {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  align-self: left;
-  text-align: left;
+  display: flex;  
+  flex-direction: column; 
   gap: 20px;
-  padding-top: 20px;
-}
+ }
 
 .cursosheader {
   width: 80%;
@@ -88,41 +92,46 @@ hr {
   gap: 20px;
 }
 
-/* .cursos-info {
- width: 80%;
+ .cursos-info {
   display: flex;
- flex-direction: column;
-  justify-content: left;
-  align-items: left;
-  align-self: left;
-  gap: 30px;
-}*/
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
 
+.cursos-info-texto{
+  display: flex;
+  flex-basis: calc(50% - 10px); /* 50% width with a little spacing */
+  margin-bottom: 20px;
+  margin-right: 0;
+  flex-direction: column;
+}
+ 
 .cursos-head-01 {
-  font-size: 2rem;
+  font-size: 3.5rem;
   text-align: left;
   margin-bottom: 10px;
-}
+} 
 .cursos-head-02 {
-  font-size: 2rem;
+  font-size: 3rem;
   text-align: left;
   font-weight: bold;
   margin-bottom: 30px;
 }
-.cursos-texto-01 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.cursos-head-03 {
   font-size: 1.5rem;
-  font-weight: bold;
-  text-align: left;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.cursos-texto-01 {
+  font-weight: 600;
+  margin-top: 20px;
   margin-bottom: 10px;
 }
 .cursos-texto-02 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  font-size: 1rem;
-  text-align: justify;
-  margin-bottom: 10px;
+  font-size: 16px;
+  text-align: justify; 
 }
 
 /* TESTIMONIOS */
@@ -149,6 +158,7 @@ hr {
 .testimonios-texto-01 {
   font-size: 1.5rem;
   font-weight: bold;
+  text-align: center;
 }
 .testimonios-texto-02 {
   font-size: 1.2rem;
@@ -376,8 +386,9 @@ label {
 }
 
 .about-title {
-  align-self: flex-start;
+  font-size: 1.5rem;
   margin-top: 30px;
+  text-align: center;
 }
 
 .about-cards {
@@ -387,7 +398,7 @@ label {
   margin-bottom: 50px;
 }
 
-.about-cards-card {
+.about-cards-card  {
   display: flex;
   flex-basis: calc(50% - 10px); /* 50% width with a little spacing */
   margin-bottom: 20px;
@@ -403,6 +414,19 @@ label {
 }
 .about-cards-card-text {
   font-size: 12px;
+}
+.fotos {
+  width: 90px;
+  height: 90px;
+  border-radius: 90%;
+  overflow: hidden;
+  margin-right: 15px;
+}
+.fotos img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 /* FOOTER */
