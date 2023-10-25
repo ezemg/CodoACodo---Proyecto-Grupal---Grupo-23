@@ -1,1 +1,3 @@
-bghjdfbghjdfbgdf
+-Armar card de curso a iniciar en el calendario
+-Header sticky, navigate to
+-Si cambiamos el background color, recordar poner más contraste en las líneas de la tabla
