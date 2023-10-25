@@ -391,42 +391,56 @@ label {
   text-align: center;
 }
 
-.about-cards {
+.about-cards{
+  height: 25rem;
+  position:relative;
+  border-radius: 10px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 50px;
+ 
 }
+/*.about-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}*/
 
 .about-cards-card  {
-  display: flex;
-  flex-basis: calc(50% - 10px); /* 50% width with a little spacing */
+  display: flex;  
+  flex-basis: calc(25% - 10px); /* 50% width with a little spacing */
   margin-bottom: 20px;
   margin-right: 0;
-
+  border-radius: 10px;
+  background: #ffffff;
   flex-direction: column;
+  text-align: center;
+  box-shadow: 2px 3px 5px rgba(73,69,52,0.4);
 }
 
-.about-cards-card-title {
-  font-weight: 600;
-  margin-top: 20px;
+.about-cards-card-title h4{
+  font-size: 18px;
   margin-bottom: 10px;
 }
-.about-cards-card-text {
-  font-size: 12px;
+
+.about-cards-card-text h5 {
+  font-size: 13px;
 }
 .fotos {
-  width: 90px;
-  height: 90px;
+  padding-top: 20px;
+  height: 50%;
   border-radius: 90%;
   overflow: hidden;
-  margin-right: 15px;
+  margin-bottom: 5px;
 }
 .fotos img {
-  width: 100%;
-  height: 100%;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   object-fit: cover;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 }
 
 /* FOOTER */
@@ -606,9 +620,13 @@ color: white;
 }
 
 #courseInfo {
+  margin-left: 40%;
+  margin-right: 40%;
   text-align: center;
-  margin: 85px;
+  background: rgb(206, 234, 238) ;
+  box-shadow: 2px 3px 5px rgba(73,69,52,0.4);
 }
+
 
 
 .course-name {
