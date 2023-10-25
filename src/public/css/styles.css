@@ -9,11 +9,11 @@
   --heading-clr: #ffffff;
   --text-clr: #c3c4c8;
 
-  --title-size: 3rem;
-  --subtitle-size: 2.25rem;
-  --box-title-size: 1.5rem;
-  --box-text-size: 1rem;
-  --box-mini-size: 0.8rem;
+  --title-size: 4rem;
+  --subtitle-size: 3rem;
+  --box-title-size: 2rem;
+  --box-text-size: 1.5rem;
+  --box-mini-size: 1rem;
 }
 
 html {
@@ -468,7 +468,7 @@ hr {
   flex-direction: column;
   gap: 20px;
   justify-content: space-around;
-  width: 300px;
+  width: 30%;
 }
 
 .proximosCursos-cards-card img {
@@ -593,6 +593,7 @@ hr {
 }
 
 .formulario__input {
+  font-size: var(--box-mini-size);
   width: 100%;
   background: #ffffff;
   border: 3px solid transparent;
@@ -609,7 +610,7 @@ hr {
 }
 
 .formulario__input-error {
-  font-size: 12px;
+  font-size: 40px;
   margin-bottom: 0;
   display: none;
 }
@@ -623,7 +624,7 @@ hr {
   right: 10px;
   bottom: 15px;
   z-index: 100;
-  font-size: 16px;
+  font-size: 50;
   opacity: 0;
 }
 
@@ -637,7 +638,7 @@ form {
 
 label {
   color: black;
-  font-size: 14px;
+  font-size: var(--box-text-size);
   font-weight: 600;
   margin-bottom: 15px;
 }
