@@ -18,6 +18,9 @@
   --box-supermini-size: 0.75rem;
 }
 
+.swal2-height-auto {
+  padding: 0 !important;
+}
 html,
 body {
   overflow-x: hidden;
@@ -397,33 +400,17 @@ html {
 
 .about-cards {
   display: flex;
-  /* flex-wrap: wrap; */
   flex-direction: column;
-  justify-content: space-between;
+  gap: 20px;
 }
 
 .about-cards-card {
   display: flex;
-  flex-basis: calc(25% - 10px);
-  margin-bottom: 20px;
-  margin-right: 0;
-  border-radius: 10px;
-  background: #ffffff;
   flex-direction: column;
   text-align: center;
+  border-radius: 10px;
+  background: #ffffff;
   box-shadow: 2px 3px 5px 1px rgba(73, 69, 52, 0.4);
-  height: 330px;
-}
-
-.about-cards-card-title {
-  margin-top: 10px;
-  font-size: var(--box-title-size);
-}
-
-.about-cards-card-text {
-  margin-top: 10px;
-  font-size: var(--box-text-size);
-  padding: 0 10px 0 10px;
 }
 
 .fotos {
@@ -438,6 +425,18 @@ html {
   border-radius: 50%;
   object-fit: cover;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+.about-cards-card-title {
+  margin-top: 10px;
+  font-size: var(--box-title-size);
+  font-weight: 600;
+}
+
+.about-cards-card-text {
+  margin-top: 10px;
+  font-size: var(--box-text-size);
+  padding: 0 10px 0 10px;
+  margin-bottom: 5%;
 }
 
 /* Formulario de Contacto */
@@ -528,12 +527,13 @@ label {
   color: var(--error-clr);
   right: 8%;
   width: 0%;
+  display: none;
 }
 
 .formulario__input-msg-error {
   font-size: var(--box-mini-size);
   color: var(--error-clr);
-  /* display: none; */
+  display: none;
 }
 
 .mensaje {
@@ -572,7 +572,7 @@ label {
 }
 .formulario__mensaje-exito {
   font-size: 14px;
-  /* display: none; */
+  display: none;
 }
 
 .formulario__input:focus {
@@ -1088,38 +1088,30 @@ label {
   }
 
   .about-cards {
-    height: 25rem;
-    position: relative;
-    flex-wrap: wrap;
     flex-direction: row;
-    border-radius: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    /* margin-bottom: 30px; */
+    gap: 0;
+    margin-bottom: 30px;
   }
 
   .about-cards-card {
-    display: flex;
+    /* display: flex; */
     flex-basis: calc(25% - 10px);
     margin-bottom: 20px;
-    margin-right: 0;
-    border-radius: 10px;
-    background: #ffffff;
-    flex-direction: column;
-    text-align: center;
     box-shadow: 2px 3px 5px 1px rgba(73, 69, 52, 0.4);
-    height: 330px;
+    /* height: 330px; */
   }
 
   .about-cards-card-title {
     margin-top: 10px;
-    font-size: var(--box-title-size);
+    font-size: var(--box-text-size);
   }
 
   .about-cards-card-text {
     margin-top: 10px;
-    font-size: var(--box-text-size);
+    font-size: var(--box-mini-size);
     padding: 0 10px 0 10px;
   }
 

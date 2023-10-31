@@ -24,6 +24,10 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.2/dist/sweetalert2.min.css"
+    />
     <title>CodoCursos</title>
     <link rel="icon" href="./public/assets/logo.svg" />
   </head>
@@ -298,7 +302,7 @@
                 class="formulario__validacion-estado fa-regular fa-circle-xmark"
               ></i>
             </div>
-            <p class="formulario__input-msg-error">
+            <p class="formulario__input-msg-error" id="mensaje__nombre">
               Por fa, introduce tu nombre!
             </p>
           </div>
@@ -319,7 +323,9 @@
                 class="formulario__validacion-estado fa-regular fa-circle-xmark"
               ></i>
             </div>
-            <p class="formulario__input-msg-error">El mail es incorrecto :(</p>
+            <p class="formulario__input-msg-error" id="mensaje__mail">
+              El mail es incorrecto :(
+            </p>
           </div>
           <div class="formulario__grupo" id="grupo__usuario">
             <label for="telefono" class="formulario__label">TELÉFONO*</label>
@@ -336,7 +342,7 @@
                 class="formulario__validacion-estado fa-regular fa-circle-xmark"
               ></i>
             </div>
-            <p class="formulario__input-msg-error">
+            <p class="formulario__input-msg-error" id="mensaje__telefono">
               El número de teléfono no es válido.
             </p>
           </div>
@@ -390,5 +396,6 @@
     <script src="./public/js/loadCalendar.js"></script>
     <script src="./public/js/validacionform.js"></script>
     <script src="./public/js/loadNavScroll.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.2/dist/sweetalert2.all.min.js"></script>
   </body>
 </html>
