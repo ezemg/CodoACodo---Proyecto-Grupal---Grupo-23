@@ -1224,6 +1224,6 @@ label {
     justify-content: flex-end;
     font-style: italic;
     font-size: var(--box-mini-size);
-    width: 33%;
+    width: 32%;
   }
 }
