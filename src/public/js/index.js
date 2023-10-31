@@ -62,12 +62,17 @@ document.addEventListener("DOMContentLoaded", function () {
       // Inicializo el carrusel de Tiny Slider después de agregar los elementos
       const slider = tns({
         container: ".my-slider",
-        items: 3,
+        items: 1,
         autoplay: false,
         controls: false,
         navPosition: "bottom",
         mouseDrag: true,
         nav: false,
+        responsive: {
+          468: {
+            items: 3,
+          },
+        },
       });
     } catch (error) {
       console.log(error);
@@ -77,5 +82,4 @@ document.addEventListener("DOMContentLoaded", function () {
   // Llamado a la función para cargar los testimonios
   loadTestimonials();
 });
- // calendario 
-
+// calendario
