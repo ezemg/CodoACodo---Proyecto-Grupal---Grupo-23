@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
         formData.append('descripcion', descripcion);
         formData.append('img', imagen);
 
-        const baseUrl = 'http://127.0.0.1:5000';
+        const baseUrl = 'https://codocursosbackend.onrender.com';
 
         try {
             spinner.style.display = 'block';

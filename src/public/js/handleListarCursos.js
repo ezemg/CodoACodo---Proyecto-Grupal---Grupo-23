@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     const errorMsg = document.getElementById('error-msg');
     const spinner = document.getElementById('spinner');
 
-    const baseUrl = 'http://127.0.0.1:5000';
+    const baseUrl = 'https://codocursosbackend.onrender.com';
 
     spinner.style.display = 'block';
 
@@ -72,7 +72,7 @@ function crearBotonEditar(idCurso) {
 
 async function handleEliminarCurso(curso, cursoDiv) {
     try {
-        const baseUrl = 'http://127.0.0.1:5000';
+        const baseUrl = 'https://codocursosbackend.onrender.com';
 
         const result = await Swal.fire({
             title: "¿Estás seguro de querer eliminar este curso?",

@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     const errorMsg = document.getElementById('error-msg');
     const spinner = document.getElementById('spinner');
 
-    const baseUrl = 'http://127.0.0.1:5000';
+    const baseUrl = 'https://codocursosbackend.onrender.com';
 
     // Obtiene el ID del curso desde la URL
     const urlParams = new URLSearchParams(window.location.search);
