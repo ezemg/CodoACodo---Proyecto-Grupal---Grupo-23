@@ -1,0 +1,48 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./public/css/stylesCrud.css">
+
+    <title>Formulario de Curso</title>
+   
+</head>
+<body>
+
+    <header>
+        <h1>CodoCursos</h1>
+        <nav>
+            <ul>
+                <li><a href="./listadoCursos.html">Listar Cursos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="spinner" class="spinner-container">
+        <div class="spinner"></div>
+    </div>
+
+    <h2>Agregar curso</h2>
+
+    <form class="formulario" method="POST" enctype="multipart/form-data">
+        <label for="nombre">Nombre del Curso:</label>
+        <input type="text" id="nombre" name="nombre" >
+
+        <label for="descripcion">Descripción del Curso:</label>
+        <textarea id="descripcion" name="descripcion" rows="4" ></textarea>
+
+        <div class="file-container">
+            <label class="file-btn" for="imagen">Seleccionar Imagen</label>
+            <input type="file" id="imagen" name="imagen" onchange="mostrarVistaPrevia(this)">
+            <img id="imagen-preview" class="file-preview" alt="Vista Previa de la Imagen">
+        </div>
+
+        <p id="error-msg" class="error"></p>
+
+        <input type="submit" value="Agregar Curso">
+    </form> 
+
+    
+<script src="./public/js/handleAgregarCurso.js"></script>
+</body>
+</html>

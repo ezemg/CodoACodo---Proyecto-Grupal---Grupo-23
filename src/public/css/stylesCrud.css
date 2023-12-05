@@ -1,0 +1,192 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.header {
+    text-align: center;
+    background-color: #3498db;
+    color: white;
+    padding: 10px;
+}
+
+h2 {
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+ul li a {
+    color: whitesmoke;
+    display: flex;
+    border: 1px black solid;
+    width: 150px;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border-radius: 5px;
+    font-weight:540;
+    background-color: #2980b9;
+    
+}
+
+nav li {
+    display: inline;
+    margin-right: 10px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.formulario {
+    max-width: 400px;
+    margin: auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+.file-container {
+    margin-bottom: 24px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.file-btn {
+    background-color: #4caf50;
+    color: white;
+    padding: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    margin-right: 8px;
+}
+
+.file-preview {
+    max-height: 118px;
+    margin-left: 8px;
+    display: none;
+}
+
+.file-container input[type="file"] {
+    display: none;
+}
+
+input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.error {
+    color: red;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.curso {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.curso img {
+    max-width: 4rem;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.curso h3 {
+    margin-bottom: 8px;
+}
+
+.curso p {
+    margin-bottom: 16px;
+}
+
+.editar-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.editar-btn:hover {
+    background-color: #2980b9;
+}
+
+.eliminar-btn {
+    background-color: #ff3333;
+    color: white;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.eliminar-btn:hover {
+    background-color: #ff6666;
+}
+
+
+
+/* Estilos para el contenedor del spinner */
+.spinner-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 1000;
+}
+
+/* Estilos para el spinner */
+.spinner {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -20px;
+    margin-left: -20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

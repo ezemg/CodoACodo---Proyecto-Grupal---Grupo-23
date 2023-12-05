@@ -1,0 +1,25 @@
+<div class="item testimonial-card">
+  <main class="test-card-body">
+    <div class="quote">
+      <i class="fa fa-quote-left"></i>
+      <h2>${item.company.catchPhrase}</h2>
+    </div>
+    <p>${item.comment.slice(0, 80)}</p>
+    <div class="ratings">
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+    </div>
+  </main>
+  <div class="profile">
+    <div class="profile-image">
+      <img src="./public/assets/testimonial/image${i + 1}.jpg" />
+    </div>
+    <div class="profile-desc">
+      <span>${item.name}</span>
+      <span>${item.company.name}</span>
+    </div>
+  </div>
+</div>
