@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.2/dist/sweetalert2.min.css"
+    />
+    <link rel="stylesheet" href="./public/css/stylesCrud.css">
+    <title>Lista de Cursos</title>
+    
+</head>
+<body>
+
+      <!-- Encabezado -->
+      <header>
+        <h1>Nombre de tu Aplicación</h1>
+        <nav>
+            <ul>
+                <li><a href="./agregarCurso.html">Agregar Curso</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h2>Lista de Cursos</h2>
+
+    <body>
+        <div id="spinner" class="spinner-container">
+            <div class="spinner"></div>
+        </div>
+
+    <div id="cursos-container"></div>
+
+    <p id="error-msg" class="error"></p>
+
+    <script src="./public/js/handleListarCursos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.2/dist/sweetalert2.all.min.js"></script>
+
+</body>
+</html>

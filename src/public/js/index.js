@@ -62,6 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Inicializo el carrusel de Tiny Slider después de agregar los elementos
       const slider = tns({
         container: ".my-slider",
+        center: true,
         items: 1,
         autoplay: false,
         controls: false,
