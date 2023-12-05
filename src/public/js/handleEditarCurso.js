@@ -1,98 +1,111 @@
-document.addEventListener("DOMContentLoaded", async function () {
-    const formulario = document.querySelector('.formulario');
-    const inputNombre = document.querySelector('#nombre');
-    const inputDescripcion = document.querySelector('#descripcion');
-    const inputImagen = document.querySelector('#imagen');
-    const errorMsg = document.getElementById('error-msg');
-    const spinner = document.getElementById('spinner');
-
-    const baseUrl = 'https://codocursosbackend.onrender.com';
-
-    // Obtiene el ID del curso desde la URL
-    const urlParams = new URLSearchParams(window.location.search);
-
-    const idCurso = urlParams.get('id');
-
-    // Lógica para obtener y mostrar los datos del curso a editar
-    try {
-
-        spinner.style.display = 'block';
-
-
-        const res = await fetch(`${baseUrl}/cursos/${idCurso}`);
-        const data = await res.json();
-
-        if (res.ok) {
-            const { curso } = data; // Asumo que tu API devuelve el curso directamente, ajusta según tu implementación
-
-            // Rellena los campos del formulario con los datos actuales del curso
-            inputNombre.value = curso.nombre;
-            inputDescripcion.value = curso.descripcion;
-
-            spinner.style.display = 'none';
-
-            // Puedes agregar más lógica según tus necesidades
-        } else {
-            errorMsg.textContent = `Error en la solicitud: ${res.status} ${res.statusText}`;
-        }
-    } catch (error) {
-        errorMsg.textContent = `Error al realizar la solicitud: ${error.message}`;
-    }
-
-    formulario.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        const nombre = inputNombre.value;
-        const descripcion = inputDescripcion.value;
-        const imagen = inputImagen.files[0]; // Acceder al archivo de la imagen
-
-        // Crear objeto FormData y agregar datos
-        const formData = new FormData();
-        formData.append('nombre', nombre);
-        formData.append('descripcion', descripcion);
-
-        // Añadir la nueva imagen solo si se proporciona
-        if (imagen) {
-            formData.append('img', imagen);
-        }
-
-        // Lógica para enviar los datos actualizados al backend
-        try {
-            spinner.style.display = 'block';
-
-            const response = await fetch(`${baseUrl}/cursos/${idCurso}`, {
-                method: 'PUT', // Utiliza el método adecuado según tu API (PUT, PATCH, etc.)
-                body: formData,
-            });
-
-            if (response.ok) {
-                // Puedes redirigir al usuario a la página de detalle del curso u otra página
-                console.log('Curso editado con éxito');
-                window.location.href = './listadoCursos.html';
-
-            } else {
-                spinner.style.display = 'none';
-
-                console.error('Error al intentar editar el curso:', response.status, response.statusText);
-            }
-        } catch (error) {
-            console.error('Error al realizar la solicitud de edición:', error);
-        }
-    });
-});
-
 function mostrarVistaPrevia(input) {
-    const imagenPreview = document.getElementById('imagen-preview');
-    const file = input.files[0];
+  const imagenPreview = document.getElementById("imagen-preview");
+  const file = input.files[0];
 
-    if (file) {
-        const reader = new FileReader();
+  if (file) {
+    const reader = new FileReader();
 
-        reader.onload = function (e) {
-            imagenPreview.src = e.target.result;
-            imagenPreview.style.display = 'block';
-        };
+    reader.onload = function (e) {
+      imagenPreview.src = e.target.result;
+      imagenPreview.style.display = "block";
+    };
 
-        reader.readAsDataURL(file);
-    }
+    reader.readAsDataURL(file);
+  }
 }
+
+document.addEventListener("DOMContentLoaded", async function () {
+  // Selectores elementos DOM
+  const formulario = document.querySelector(".formulario");
+  const inputNombre = document.querySelector("#nombre");
+  const inputDescripcion = document.querySelector("#descripcion");
+  const inputImagen = document.querySelector("#imagen");
+  const errorMsg = document.getElementById("error-msg");
+  const spinner = document.getElementById("spinner");
+
+  // URL de la API, cambiar en funcion de si estamos en produccion o en desarrollo
+  const baseUrl = "https://codocursosbackend.onrender.com";
+
+  // Obtengo el ID del curso desde la URL
+  const urlParams = new URLSearchParams(window.location.search);
+
+  //   Extraigo el numero de id desde urlParams
+  const idCurso = urlParams.get("id");
+
+  // Lógica para obtener y mostrar los datos del curso a editar
+  try {
+    // Mientras carga la informacion del curso a editar, muestro spinner en pantalla
+    spinner.style.display = "block";
+
+    // Le pido a la API la data del curso que quiero editar al endpoint mediante el id del curso
+    const res = await fetch(`${baseUrl}/cursos/${idCurso}`);
+    // Convierto la promesa a JSON
+    const data = await res.json();
+
+    // Si la respuesta esta ok:
+    if (res.ok) {
+      const { curso } = data; // desestructuro el objeto para quedarme solamente con la info del curso a editar
+
+      // Relleno los campos del formulario con los datos del curso que quiero editar
+      inputNombre.value = curso.nombre;
+      inputDescripcion.value = curso.descripcion;
+
+      //   Dejo de mostrar el spinner
+      spinner.style.display = "none";
+    } else {
+      // En caso de error, muestro mensaje en pantalla
+      errorMsg.textContent = `Error en la solicitud: ${res.status} ${res.statusText}`;
+    }
+  } catch (error) {
+    errorMsg.textContent = `Error al realizar la solicitud: ${error.message}`;
+  }
+
+  //   Logica para el submit del curso editado
+  formulario.addEventListener("submit", async (e) => {
+    // Evito que el formulario haga submit inmediatamente despues del click
+    e.preventDefault();
+
+    // Leo la data que viene del formulario
+    const nombre = inputNombre.value;
+    const descripcion = inputDescripcion.value;
+    const imagen = inputImagen.files[0]; // Acceder al archivo de la imagen
+
+    // Creo objeto FormData y agrego datos
+    const formData = new FormData();
+    formData.append("nombre", nombre);
+    formData.append("descripcion", descripcion);
+
+    // En caso de que la edicion del curso venga con imagen, agrego la imagen a FormData
+    if (imagen) {
+      formData.append("img", imagen);
+    }
+
+    try {
+      // Mientras dure el proceso de submit, se muestra un spinner en pantalla
+      spinner.style.display = "block";
+
+      //   Mando la data mediante PUT al endpoint de la API
+      const response = await fetch(`${baseUrl}/cursos/${idCurso}`, {
+        method: "PUT",
+        body: formData,
+      });
+
+      //   Si la respuesta esta OK, muestro mensaje en consola, y redirijo a listado de cursos
+      if (response.ok) {
+        console.log("Curso editado con éxito");
+        window.location.href = "./listadoCursos.html";
+      } else {
+        // En caso de error, dejo de mostrar el spinner, mando mensaje de error por consola
+        spinner.style.display = "none";
+
+        console.error(
+          "Error al intentar editar el curso:",
+          response.status,
+          response.statusText
+        );
+      }
+    } catch (error) {
+      console.error("Error al realizar la solicitud de edición:", error);
+    }
+  });
+});
