@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Leo la data que viene del formulario
     const nombre = inputNombre.value;
-    const descripcion = inputDescripcion.value;
+    const descripcion = inputDescripcion.value.replace(/\n/g, '\\n');
     const imagen = inputImagen.files[0]; // Acceder al archivo de la imagen
 
     // Creo objeto FormData y agrego datos
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
     formData.append("img", imagen);
 
     // URL de la API, cambiar en funcion de si estamos en produccion o en desarrollo
-    const baseUrl = "https://codocursosbackend.onrender.com";
+    const baseUrl = "https://codocursosbackend.onrender.com";;
 
     try {
       // Mientras dure el proceso de submit, se muestra un spinner en pantalla
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       //   Si la respuesta esta OK, convierto la promesa a JSON, y redirijo a listado de cursos
       if (response.ok) {
-        const data = await response.json();
+        
         window.location.href = "./listadoCursos.html";
       } else {
         // En caso de error, dejo de mostrar el spinner, mando mensaje de error por consola
@@ -75,6 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
         );
       }
     } catch (error) {
+      spinner.style.display = "none";
       console.error("Error al realizar la solicitud:", error);
     }
   });

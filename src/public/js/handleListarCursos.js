@@ -1,8 +1,10 @@
 const handleEliminarCurso = async (curso, cursoDiv) => {
   const spinner = document.getElementById("spinner");
+  const errorMsg = document.getElementById("error-msg");
+
 
   // URL de la API, cambiar en funcion de si estamos en produccion o en desarrollo
-  const baseUrl = "https://codocursosbackend.onrender.com";
+  const baseUrl = "https://codocursosbackend.onrender.com";;
 
   try {
     // Disparo una alerta para ver si se quiere eliminar el curso
@@ -18,6 +20,7 @@ const handleEliminarCurso = async (curso, cursoDiv) => {
       Swal.fire("Eliminación cancelada", "", "info");
       return;
     }
+
     spinner.style.display = "block";
 
     // En caso de que presione aceptar, llamo a eliminar el curso de la base de datos desde la API
@@ -45,6 +48,28 @@ const handleEliminarCurso = async (curso, cursoDiv) => {
     console.error("Error al manejar la eliminación del curso:", error);
     Swal.fire("Error al manejar la eliminación del curso", "", "error");
   }
+
+  try {
+    const res = await fetch(`${baseUrl}/cursos`); // Pido el listado de cursos a la API
+    
+
+    const data = await res.json(); // Convierto la promesa a JSON
+
+    if (!res.ok) {
+      // Si la solicitud a la API tiene error, interrumpo la ejecucion y establezco mensaje de error
+      errorMsg.textContent = `Error en la solicitud: ${res.status} ${res.statusText}`;
+      return;
+    }
+
+    const { cursos } = data;
+
+    if(cursos.length === 0) errorMsg.textContent = "No hay cursos disponibles.";
+      
+    return
+  } catch (error) {
+    errorMsg.textContent = `Error al realizar la solicitud: ${error.message}`;
+
+  }
 };
 
 const crearImagen = (src) => {
@@ -59,7 +84,7 @@ const crearElemento = (tag, contenido) => {
   return elemento;
 };
 
-const crearBotonEliminar = (curso, cursoDiv) => {
+const crearBotonEliminar = () => {
   const eliminarBtn = document.createElement("button");
   eliminarBtn.classList.add("eliminar-btn");
   eliminarBtn.textContent = "Eliminar";
@@ -87,7 +112,8 @@ const crearCursoDiv = (curso) => {
   const nombre = crearElemento("h3", curso.nombre);
   cursoDiv.appendChild(nombre);
 
-  const descripcion = crearElemento("p", curso.descripcion);
+  const descripcion = crearElemento("p");
+  descripcion.innerHTML = curso.descripcion.replace(/\n/g, '<br>');
   cursoDiv.appendChild(descripcion);
 
   const editarBtn = crearBotonEditar(curso.codigo);
@@ -117,22 +143,28 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   try {
     const res = await fetch(`${baseUrl}/cursos`); // Pido el listado de cursos a la API
+    
+
     const data = await res.json(); // Convierto la promesa a JSON
 
+    console.log('data', data)
     if (!res.ok) {
       // Si la solicitud a la API tiene error, interrumpo la ejecucion y establezco mensaje de error
       errorMsg.textContent = `Error en la solicitud: ${res.status} ${res.statusText}`;
       return;
     }
 
+    
     const { cursos } = data; // Desestructuro lo que viene desde la API, para quedarme solamente con los cursos
 
+    
     if (cursos.length === 0) {
       // Si la respuesta de la API es exitosa pero no tengo cursos, interrumpo ejecucion e informo que no hay cursos
       errorMsg.textContent = "No hay cursos disponibles.";
       return;
     }
 
+    console.log(cursos)
     // Si tengo uno o mas cursos, creo un DIV con la informacion correspondiente por cada uno de los cursos
     cursos.forEach((curso) => {
       const cursoDiv = crearCursoDiv(curso);

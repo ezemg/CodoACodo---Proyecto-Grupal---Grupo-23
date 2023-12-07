@@ -28,10 +28,12 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   // Obtengo el ID del curso desde la URL
   const urlParams = new URLSearchParams(window.location.search);
+  
 
   //   Extraigo el numero de id desde urlParams
   const idCurso = urlParams.get("id");
 
+  
   // Lógica para obtener y mostrar los datos del curso a editar
   try {
     // Mientras carga la informacion del curso a editar, muestro spinner en pantalla
@@ -42,6 +44,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     // Convierto la promesa a JSON
     const data = await res.json();
 
+    console.log(res)
     // Si la respuesta esta ok:
     if (res.ok) {
       const { curso } = data; // desestructuro el objeto para quedarme solamente con la info del curso a editar
@@ -54,6 +57,9 @@ document.addEventListener("DOMContentLoaded", async function () {
       spinner.style.display = "none";
     } else {
       // En caso de error, muestro mensaje en pantalla
+      spinner.style.display = "none";
+      formulario.style.display = 'none'
+      console.log(res)
       errorMsg.textContent = `Error en la solicitud: ${res.status} ${res.statusText}`;
     }
   } catch (error) {
@@ -67,7 +73,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     // Leo la data que viene del formulario
     const nombre = inputNombre.value;
-    const descripcion = inputDescripcion.value;
+    const descripcion = inputDescripcion.value.replace(/\n/g, '\\n');
     const imagen = inputImagen.files[0]; // Acceder al archivo de la imagen
 
     // Creo objeto FormData y agrego datos
@@ -105,6 +111,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         );
       }
     } catch (error) {
+      spinner.style.display = "none"
       console.error("Error al realizar la solicitud de edición:", error);
     }
   });
